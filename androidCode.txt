@@ -1,0 +1,53 @@
+// Created by Connor Ford
+// Takes captured IR signals, hardcodes the pattern into the app, allows phone to transmit that IR pattern
+// March 1, 2018
+
+package com.example.dsu.rchelicopterapp;
+
+import android.content.Context;
+import android.hardware.ConsumerIrManager;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+    ConsumerIrManager mCIR;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        mCIR = (ConsumerIrManager) getSystemService(Context.CONSUMER_IR_SERVICE);
+
+        final TextView text = findViewById(R.id.textView);
+        Button up = findViewById(R.id.up);
+
+        up.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                text.setText("Transmitting");
+                int[] upPattern = { 8782, 4402, 522, 594, 546, 566, 526, 1678,
+
+                        542, 570, 550, 566, 546, 570, 542, 570,
+
+                        522, 590, 526, 1678, 546, 1658, 542, 570,
+
+                        546, 1654, 546, 1658, 546, 1658, 522, 1678,
+
+                        530, 1670, 530, 586, 542, 1658, 546, 566,
+
+                        546, 1654, 550, 566, 526, 1674, 546, 570,
+
+                        546, 570, 546, 1654, 546, 570, 546, 1654,
+
+                        522, 594, 526, 1674, 546, 570, 546, 1654,
+
+                        526, 1678, 530, 1000};
+                mCIR.transmit(38000, upPattern);
+            }
+        });
+    }
+}
