@@ -2,7 +2,8 @@
 
 ---April 2018---
 
---Project Contributers--
+-Project Contributers-
+
 Bailey Belisario, Connor Ford, Luke Fleck, Caleb Dykstra
 
 This was a project designed to hack an RC Helicopter through IR Signals.
