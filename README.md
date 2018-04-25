@@ -2,6 +2,9 @@
 
 ---April 2018---
 
+--Project Contributers--
+Bailey Belisario, Connor Ford, Luke Fleck, Caleb Dykstra
+
 This was a project designed to hack an RC Helicopter through IR Signals.
 We initially planned to used a "hacker's" mindset and capture IR signals 
 that the helicopter sent out, then replay them through an IR Transmitter.
